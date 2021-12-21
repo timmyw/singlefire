@@ -1,0 +1,290 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Single fire pulse"
+Date ""
+Rev ""
+Comp ""
+Comment1 "Author: Tim Whelan (tim@zipt.co)"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 61C04974
+P 6950 800
+F 0 "#FLG01" H 6950 875 50  0001 C CNN
+F 1 "PWR_FLAG" H 6950 973 50  0001 C CNN
+F 2 "" H 6950 800 50  0001 C CNN
+F 3 "~" H 6950 800 50  0001 C CNN
+	1    6950 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L singlefire-rescue:NE555-Timer U1
+U 1 1 61C04D9D
+P 3300 2300
+F 0 "U1" H 3000 1950 50  0000 C CNN
+F 1 "NE555" H 3550 1950 50  0000 C CNN
+F 2 "" H 3300 2300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ne555.pdf" H 3300 2300 50  0001 C CNN
+	1    3300 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2500 2800 2500
+Text Label 4150 2100 0    50   ~ 0
+SIG
+Wire Wire Line
+	4150 2100 3800 2100
+Wire Wire Line
+	2600 2500 2600 2850
+$Comp
+L Switch:SW_Push SW1
+U 1 1 61C074FE
+P 1700 2400
+F 0 "SW1" H 1700 2593 50  0000 C CNN
+F 1 "SW_Push" H 1700 2594 50  0001 C CNN
+F 2 "" H 1700 2600 50  0001 C CNN
+F 3 "~" H 1700 2600 50  0001 C CNN
+	1    1700 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 61C079CF
+P 1500 2550
+F 0 "#PWR01" H 1500 2300 50  0001 C CNN
+F 1 "GND" H 1505 2377 50  0000 C CNN
+F 2 "" H 1500 2550 50  0001 C CNN
+F 3 "" H 1500 2550 50  0001 C CNN
+	1    1500 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 2550 1500 2400
+$Comp
+L Device:R R1
+U 1 1 61C08013
+P 2300 1750
+F 0 "R1" H 2150 1850 50  0000 L CNN
+F 1 "22K" V 2300 1650 50  0000 L CNN
+F 2 "" V 2230 1750 50  0001 C CNN
+F 3 "~" H 2300 1750 50  0001 C CNN
+	1    2300 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1900 2300 2100
+$Comp
+L power:VCC #PWR03
+U 1 1 61C083CC
+P 2500 1450
+F 0 "#PWR03" H 2500 1300 50  0001 C CNN
+F 1 "VCC" H 2517 1623 50  0000 C CNN
+F 2 "" H 2500 1450 50  0001 C CNN
+F 3 "" H 2500 1450 50  0001 C CNN
+	1    2500 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1450 2500 1600
+Wire Wire Line
+	2500 1600 2300 1600
+$Comp
+L Device:D D1
+U 1 1 61C089F6
+P 2500 1750
+F 0 "D1" V 2454 1829 50  0000 L CNN
+F 1 "D" V 2545 1829 50  0000 L CNN
+F 2 "" H 2500 1750 50  0001 C CNN
+F 3 "~" H 2500 1750 50  0001 C CNN
+	1    2500 1750
+	0    1    1    0   
+$EndComp
+Connection ~ 2500 1600
+Wire Wire Line
+	2300 2100 2500 2100
+Wire Wire Line
+	2500 1900 2500 2100
+Connection ~ 2500 2100
+$Comp
+L Device:C C1
+U 1 1 61C093BD
+P 2400 2700
+F 0 "C1" H 2300 2800 50  0000 L CNN
+F 1 "100nF" V 2250 2600 50  0000 L CNN
+F 2 "" H 2438 2550 50  0001 C CNN
+F 3 "~" H 2400 2700 50  0001 C CNN
+	1    2400 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2300 3800 2500
+$Comp
+L Device:CP C2
+U 1 1 61C0A405
+P 4000 2700
+F 0 "C2" H 3882 2654 50  0000 R CNN
+F 1 "4.7uF" H 3882 2745 50  0000 R CNN
+F 2 "" H 4038 2550 50  0001 C CNN
+F 3 "~" H 4000 2700 50  0001 C CNN
+	1    4000 2700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4000 2500 4000 2550
+Wire Wire Line
+	3800 2500 4000 2500
+Connection ~ 3800 2500
+$Comp
+L Device:R R2
+U 1 1 61C0B4B9
+P 4450 2700
+F 0 "R2" H 4520 2746 50  0000 L CNN
+F 1 "10K" V 4450 2600 50  0000 L CNN
+F 2 "" V 4380 2700 50  0001 C CNN
+F 3 "~" H 4450 2700 50  0001 C CNN
+	1    4450 2700
+	1    0    0    -1  
+$EndComp
+Connection ~ 4000 2500
+$Comp
+L power:VCC #PWR07
+U 1 1 61C0BAE8
+P 4250 3050
+F 0 "#PWR07" H 4250 2900 50  0001 C CNN
+F 1 "VCC" H 4268 3223 50  0000 C CNN
+F 2 "" H 4250 3050 50  0001 C CNN
+F 3 "" H 4250 3050 50  0001 C CNN
+	1    4250 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4450 2550 4450 2500
+Wire Wire Line
+	4000 2500 4450 2500
+Wire Wire Line
+	4000 2850 4250 2850
+Connection ~ 4250 2850
+Wire Wire Line
+	4250 2850 4450 2850
+NoConn ~ 4150 2100
+$Comp
+L power:VCC #PWR0101
+U 1 1 61C10296
+P 6950 800
+F 0 "#PWR0101" H 6950 650 50  0001 C CNN
+F 1 "VCC" H 6968 973 50  0000 C CNN
+F 2 "" H 6950 800 50  0001 C CNN
+F 3 "" H 6950 800 50  0001 C CNN
+	1    6950 800 
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 61C111A8
+P 7450 800
+F 0 "#FLG0101" H 7450 875 50  0001 C CNN
+F 1 "PWR_FLAG" H 7450 973 50  0001 C CNN
+F 2 "" H 7450 800 50  0001 C CNN
+F 3 "~" H 7450 800 50  0001 C CNN
+	1    7450 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 61C11487
+P 7450 800
+F 0 "#PWR0102" H 7450 550 50  0001 C CNN
+F 1 "GND" H 7455 627 50  0000 C CNN
+F 2 "" H 7450 800 50  0001 C CNN
+F 3 "" H 7450 800 50  0001 C CNN
+	1    7450 800 
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	1350 950  5000 950 
+Wire Notes Line
+	5000 950  5000 3400
+Wire Notes Line
+	5000 3400 1350 3400
+Wire Notes Line
+	1350 3400 1350 950 
+Text Notes 1450 1100 0    50   ~ 0
+Single fire pulse
+$Comp
+L Device:R R3
+U 1 1 61C1F836
+P 1950 1750
+F 0 "R3" H 2020 1796 50  0000 L CNN
+F 1 "10K" V 1950 1650 50  0000 L CNN
+F 2 "" V 1880 1750 50  0001 C CNN
+F 3 "~" H 1950 1750 50  0001 C CNN
+	1    1950 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 61C22D1C
+P 2100 2250
+F 0 "C3" H 2100 2100 50  0000 L CNN
+F 1 "100nF" V 2250 2100 50  0000 L CNN
+F 2 "" H 2138 2100 50  0001 C CNN
+F 3 "~" H 2100 2250 50  0001 C CNN
+	1    2100 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2100 2100 2100
+Connection ~ 2300 2100
+Wire Wire Line
+	2500 2100 2800 2100
+$Comp
+L power:GND #PWR06
+U 1 1 61C064E9
+P 3300 3150
+F 0 "#PWR06" H 3300 2900 50  0001 C CNN
+F 1 "GND" H 3305 2977 50  0000 C CNN
+F 2 "" H 3300 3150 50  0001 C CNN
+F 3 "" H 3300 3150 50  0001 C CNN
+	1    3300 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2700 3300 3100
+Connection ~ 3300 3100
+Wire Wire Line
+	3300 3100 3300 3150
+Wire Wire Line
+	4250 2850 4250 3050
+Wire Wire Line
+	2600 2850 4000 2850
+Connection ~ 4000 2850
+Wire Wire Line
+	3300 1600 2500 1600
+Wire Wire Line
+	3300 1600 3300 1900
+Wire Wire Line
+	1900 2400 1950 2400
+Wire Wire Line
+	1950 1900 1950 2400
+Connection ~ 1950 2400
+Wire Wire Line
+	1950 2400 2100 2400
+Wire Wire Line
+	1950 1600 2300 1600
+Connection ~ 2300 1600
+Wire Wire Line
+	2800 2300 2400 2300
+Wire Wire Line
+	2400 2300 2400 2550
+Wire Wire Line
+	2400 2850 2400 3100
+Wire Wire Line
+	2400 3100 3300 3100
+$EndSCHEMATC
