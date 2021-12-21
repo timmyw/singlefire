@@ -1,5 +1,7 @@
 # Single fire pulse
 
+![singlefire.png](singlefire.png)
+
 I needed a re-usable circuit that can be used to generate (based off a
 manual push button) a specified length high pulse, regardless of how
 long the push button is held down.
