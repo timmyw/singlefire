@@ -7,3 +7,6 @@ long the push button is held down.
 I use this for manual testing of anything that needs a single fire
 pulse (d-latches etc).
 
+The schema is in Kicad format, with a ![PDF](singlefire.pdf) version
+available as well
+
